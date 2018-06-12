@@ -1,0 +1,27 @@
+<h1>Cadastre-se</h1>
+
+<% if @user.errors.any? %>
+    <h2>Usuário não pode ser criado</h2>
+    <% @user.errors.full_messages.each do |msg| %>
+        <ul>
+            <li> <%= msg %> </li>
+        </ul>
+    <% end %>
+<% end %>
+
+<%= form_for @user do |f| %>
+
+    <p>
+        <%= f.label :name %><br/>
+        <%= f.text_field :name %>
+    </p>
+    <p>
+        <%= f.label :cpf %><br/>
+        <%= f.text_field :cpf %>
+    </p>
+    <p>
+        <%= f.submit %>
+    </p>
+    
+
+<% end %>
