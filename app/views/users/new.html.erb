@@ -1,4 +1,4 @@
-<h1>Cadastre-se</h1>
+<h1 align="center">Cadastre-se</h1>
 
 <% if @user.errors.any? %>
     <h2>Usuário não pode ser criado</h2>
@@ -11,21 +11,30 @@
 
 <%= form_for @user do |f| %>
 
-    <p>
-        <%= f.label :name %><br/>
-        <%= f.text_field :name %>
-    </p>
-    <p>
-        <%= f.label :cpf %><br/>
-        <%= f.text_field :cpf %>
-    </p>
-    <p>
-        <%= f.label :email %><br/>
-        <%= f.text_field :email %>
-    </p>
-    <p>
-        <%= f.submit %>
-    </p>
+<div class"row">
+    <div class="container">
+        <p>
+            <%= f.label :name %><br/>
+            <%= f.text_field :name %>
+        </p>
+        <p>
+            <%= f.label :cpf %><br/>
+            <%= f.text_field :cpf %>
+        </p>
+        <p>
+            <%= f.label :email %><br/>
+            <%= f.text_field :email %>
+        </p>
+        <p>
+            <%= f.label :password %><br/>
+            <%= f.password_field :password %>
+        </p>
+        <p>
+            <%= f.submit "Cadastrar", class: 'waves-effect waves-light btn' %>
+        </p>
+
+    </div>
+</div>
     
 
 <% end %>
